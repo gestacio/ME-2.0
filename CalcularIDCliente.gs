@@ -7,21 +7,21 @@ function calcularIDCliente() {
   let fechaIDCliente = dia + "" + mes + "" + year
 
   var fechaActual = fechaIngresoCliente.getValue();
-  var fechaDia = hojaRegistro.getRange("H2").getValue();
+  var fechaDia = hojaRegistro.getRange("I2").getValue();
   console.log(fechaActual.toString());
   console.log(fechaDia.toString());
 
 
   if (fechaActual.toString() != fechaDia.toString()) {
-    hojaRegistro.getRange("H2").setValue(fechaActual);
-    hojaRegistro.getRange("H3").setValue(1);
+    hojaRegistro.getRange("I2").setValue(fechaActual);
+    hojaRegistro.getRange("I3").setValue(1);
     console.log(fechaActual);
     console.log(fechaDia);
 
     console.log("fecha diferente")
   }
 
-  var idDia = hojaRegistro.getRange("H3").getValue();
+  var idDia = hojaRegistro.getRange("I3").getValue();
   idDia = zfill(idDia, 3);
   var idCliente = fechaIDCliente + "-" + idDia;
   hojaRegistro.getRange("G9").setValue(idCliente);

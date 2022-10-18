@@ -1,14 +1,10 @@
 function registrarCliente() {
   var busqueda = buscarCliente();
 
-  // if (!busqueda) {
+  if (!busqueda) {
     var instagram = redesSocialesCliente.getValues()[0][0];
     var facebook = redesSocialesCliente.getValues()[1][0];
     var tikTok = redesSocialesCliente.getValues()[2][0];
-
-    console.log(instagram, facebook, tikTok);
-
-    
 
     var datosClientes = [];
     datosClientes[0] = codigoCliente.getValue();
@@ -31,7 +27,7 @@ function registrarCliente() {
     // Copia de los datos a través del for
     for (i = 0; i < datosClientes.length; i++) {
       hojaClientes.getRange(lastRowDestino, i + 1).setValue(datosClientes[i]);
-    // }
+    }
   }
 
   
