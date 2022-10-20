@@ -27,7 +27,7 @@ function registrarDBTransaccional() {
   var datosAIntroducir = []
   datosAIntroducir.push(idRegistroCliente.getValue());
   datosAIntroducir.push(fechaIngresoCliente.getValue());
-  datosAIntroducir.push(codigoCliente.getValue());
+  datosAIntroducir.push(cedulaCliente.getValue());
   datosAIntroducir.push(nombreCliente.getValue());
   datosAIntroducir.push(emailCliente.getValue());
   datosAIntroducir.push(telefonoCliente.getValue());

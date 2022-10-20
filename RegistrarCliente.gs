@@ -7,7 +7,7 @@ function registrarCliente() {
     var tikTok = redesSocialesCliente.getValues()[2][0];
 
     var datosClientes = [];
-    datosClientes[0] = codigoCliente.getValue();
+    datosClientes[0] = cedulaCliente.getValue();
     datosClientes[1] = nombreCliente.getValue();
     datosClientes[2] = emailCliente.getValue();
     datosClientes[3] = telefonoCliente.getValue();

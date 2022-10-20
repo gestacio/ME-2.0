@@ -3,7 +3,7 @@ function clearRegistro() {
   // fechaIngresoCliente.clearContent();
 
   // Datos Cliente
-  codigoCliente.clearContent();
+  cedulaCliente.clearContent();
   nombreCliente.clearContent();
   emailCliente.clearContent();
   telefonoCliente.clearContent();

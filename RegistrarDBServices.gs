@@ -1,7 +1,7 @@
 function registrarDBServices() {
   let idRegistricoCliente = idRegistroCliente.getValue();
   let fechitaIngreso = fechaIngresoCliente.getValue();
-  let codiguitoCliente = codigoCliente.getValue();
+  let codiguitoCliente = cedulaCliente.getValue();
   let nombresitoCliente = nombreCliente.getValue();
 
   var servicios = serviciosCliente.getValues();

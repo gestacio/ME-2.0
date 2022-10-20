@@ -52,7 +52,7 @@
 //   var valor = celdaActiva.getValue();
 
 //   // Celdas específicas dónde se extraen los datos
-//   var codigoCliente = hojaOrigen.getRange('C12').getValue();
+//   var cedulaCliente = hojaOrigen.getRange('C12').getValue();
 //   var nombreCliente = hojaOrigen.getRange('C13').getValue();
 //   var emailCliente = hojaOrigen.getRange('C14').getValue();
 //   var telefonoCliente = hojaOrigen.getRange('C15').getValue();
@@ -62,7 +62,7 @@
   
 //   // Generación de array con valor de celdas
 //   var datosClientes = [];
-//   datosClientes[0] = codigoCliente;
+//   datosClientes[0] = cedulaCliente;
 //   datosClientes[1] = nombreCliente;
 //   datosClientes[2] = emailCliente;
 //   datosClientes[3] = telefonoCliente;

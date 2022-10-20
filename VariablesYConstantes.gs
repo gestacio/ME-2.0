@@ -14,7 +14,7 @@ const idRegistroCliente = hojaRegistro.getRange('G9')
 
 
 // Datos Cliente
-const codigoCliente = hojaRegistro.getRange('C12');
+const cedulaCliente = hojaRegistro.getRange('C12');
 const nombreCliente = hojaRegistro.getRange('C13');
 const emailCliente = hojaRegistro.getRange('C14');
 const telefonoCliente = hojaRegistro.getRange('C15');
