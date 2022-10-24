@@ -1,7 +1,4 @@
 function registrarDBTransaccional() {
-  // var libro = SpreadsheetApp.getActiveSpreadsheet();
-  // var hojaDataBase = libro.getSheetByName('Data Base');
-
   var servicios = serviciosCliente.getValues();
   var cantidad = cantidadServiciosCliente.getValues();
   var arrayServiciosCliente = [];
@@ -39,9 +36,9 @@ function registrarDBTransaccional() {
   datosAIntroducir.push(importeTotalCliente.getValue());
   datosAIntroducir.push(extraCliente.getValue());
   datosAIntroducir.push(comoNosConocisteCliente.getValue());
-  datosAIntroducir.push(celdaPromocionesCliente);
+  datosAIntroducir.push(celdaPromocionesCliente != '' ? comprobanteCliente.getValue() :  "Sin Promociones");
   datosAIntroducir.push(notasServicioCliente.getValue());
-  datosAIntroducir.push('comprobante');
+  datosAIntroducir.push(comprobanteCliente.getValue() != '' ? comprobanteCliente.getValue() :  "Sin Comprobante");
   datosAIntroducir.push(atentidoPor.getValue())
 
 

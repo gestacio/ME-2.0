@@ -1,28 +1,25 @@
 function clearRegistro() {
-  // Datos Registro
-  // fechaIngresoCliente.clearContent();
-
   // Datos Cliente
   cedulaCliente.clearContent();
   nombreCliente.clearContent();
   emailCliente.clearContent();
   telefonoCliente.clearContent();
-  fechaNacCliente.clearContent();
   direccionCliente.clearContent();
+  fechaNacCliente.clearContent();
+  generoCliente.clearContent();
   comoNosConocisteCliente.clearContent();
-  redesSocialesCliente.clearContent();
+  instagramCliente.clearContent();
+  tikTokCliente.clearContent();
   metodoCliente.clearContent();
-  perteneceClubCliente.setValue(false);
-  registradoCliente.setValue("No Registrado")
+  comprobanteCliente.clearContent();
+  perteneceClubCliente.setValue("No Pertenece");
+  kvRegistradoCliente.setValue("No Registrado")
 
   // Datos Servicio
   serviciosCliente.clearContent();
   cantidadServiciosCliente.clearContent();
-  importeTotalCliente.clearContent();
-  // promocionesCliente.clearContent();
   notasServicioCliente.clearContent();
   extraCliente.clearContent()
-  importeTotalCliente.setValue("=SUM(G30;G31)")
 
 }
 

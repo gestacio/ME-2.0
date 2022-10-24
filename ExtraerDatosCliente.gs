@@ -1,5 +1,5 @@
 function onEdit(e) {
-  if (e.range.getA1Notation() === 'C12') {
+  if (e.range.getA1Notation() === 'C13') {
     extraerDatosCliente();
     // SpreadsheetApp.getUi().alert("has editado algo");
   }
@@ -15,35 +15,37 @@ function extraerDatosCliente() {
   if (busqueda) {
     var indiceTablaDeBusqueda = tablaDeBusqueda.indexOf(busqueda) + 2;
     var indiceTablaDeBusqueda = indiceTablaDeBusqueda.toFixed();
-    var arrayDatosClienteEncontrado = hojaClientes.getRange(indiceTablaDeBusqueda, 2, 1, 10);
+    var arrayDatosClienteEncontrado = hojaClientes.getRange(indiceTablaDeBusqueda, 2, 1, hojaClientes.getLastColumn() - 1);
     var arrayDatosClienteEncontrado = arrayDatosClienteEncontrado.getValues()[0]
+    console.log(arrayDatosClienteEncontrado)
     
     nombreCliente.setValue(arrayDatosClienteEncontrado[0]);
     emailCliente.setValue(arrayDatosClienteEncontrado[1]);
     telefonoCliente.setValue(arrayDatosClienteEncontrado[2]);
-    fechaNacCliente.setValue(arrayDatosClienteEncontrado[3]);
-    direccionCliente.setValue(arrayDatosClienteEncontrado[4]);
+    direccionCliente.setValue(arrayDatosClienteEncontrado[3]);
+    fechaNacCliente.setValue(arrayDatosClienteEncontrado[4]);
     comoNosConocisteCliente.setValue(arrayDatosClienteEncontrado[5]);
+    instagramCliente.setValue(arrayDatosClienteEncontrado[6]);
+    tikTokCliente.setValue(arrayDatosClienteEncontrado[7]);
+    generoCliente.setValue(arrayDatosClienteEncontrado[9]);
 
-    var arrayDeArrayRedesSociales = []
-    // var arrayRedesSociales = arrayDatosClienteEncontrado[6].split('/')
-    arrayDeArrayRedesSociales.push([arrayDatosClienteEncontrado[6]])
-    arrayDeArrayRedesSociales.push([arrayDatosClienteEncontrado[7]])
-    arrayDeArrayRedesSociales.push([arrayDatosClienteEncontrado[8]])
-    redesSocialesCliente.setValues(arrayDeArrayRedesSociales);
 
-    if (arrayDatosClienteEncontrado[9] == "Pertenece") {
-      arrayDatosClienteEncontrado[9] = true;
-    } else {
-      arrayDatosClienteEncontrado[9] = false;
-    }
+
+    // var arrayDeArrayRedesSociales = []
+    // // var arrayRedesSociales = arrayDatosClienteEncontrado[6].split('/')
+    // arrayDeArrayRedesSociales.push([arrayDatosClienteEncontrado[6]])
+    // arrayDeArrayRedesSociales.push([arrayDatosClienteEncontrado[7]])
+    // arrayDeArrayRedesSociales.push([arrayDatosClienteEncontrado[8]])
+    // redesSocialesCliente.setValues(arrayDeArrayRedesSociales);
+
     
-    perteneceClubCliente.setValue(arrayDatosClienteEncontrado[9]);
-    registradoCliente.setValue("Registrado")
-    console.log(arrayDatosClienteEncontrado)
+    
+    // perteneceClubCliente.setValue(arrayDatosClienteEncontrado[9]);
+    kvRegistradoCliente.setValue("Registrado")
+    // console.log(arrayDatosClienteEncontrado)
     
   } else {
-    registradoCliente.setValue("No Registrado");
+    kvRegistradoCliente.setValue("No Registrado");
     // SpreadsheetApp.getUi().alert("registro no encontrado");
   }
 

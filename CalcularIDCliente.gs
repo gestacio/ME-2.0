@@ -7,24 +7,26 @@ function calcularIDCliente() {
   let fechaIDCliente = dia + "" + mes + "" + year
 
   var fechaActual = fechaIngresoCliente.getValue();
-  var fechaDia = hojaRegistro.getRange("I2").getValue();
+  var fechaDia = kvFechaComprobante.getValue();
   console.log(fechaActual.toString());
-  console.log(fechaDia.toString());
+  console.log(fechaIngresoCliente.getValue().toString());
 
 
   if (fechaActual.toString() != fechaDia.toString()) {
-    hojaRegistro.getRange("I2").setValue(fechaActual);
-    hojaRegistro.getRange("I3").setValue(1);
+    kvFechaComprobante.setValue(fechaActual);
+    kvIdClienteDia.setValue(1)
+    // hojaRegistro.getRange("L4").setValue(1);
     console.log(fechaActual);
     console.log(fechaDia);
 
     console.log("fecha diferente")
   }
 
-  var idDia = hojaRegistro.getRange("I3").getValue();
+  // var idDia = hojaRegistro.getRange("L4").getValue();
+  var idDia = kvIdClienteDia.getValue();
   idDia = zfill(idDia, 3);
   var idCliente = fechaIDCliente + "-" + idDia;
-  hojaRegistro.getRange("G9").setValue(idCliente);
+  kvIdRegistroCliente.setValue(idCliente)
   console.log(idCliente)
 }
 

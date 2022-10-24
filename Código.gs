@@ -21,8 +21,8 @@ function registroCliente() {
 }
 
 function actualizarIDCliente() {
-  var idDia = parseInt(hojaRegistro.getRange("I3").getValue()) + 1
-  hojaRegistro.getRange("I3").setValue(idDia);
+  var idDia = parseInt(kvIdClienteDia.getValue()) + 1
+  kvIdClienteDia.setValue(idDia);
 
   calcularIDCliente()
 }
