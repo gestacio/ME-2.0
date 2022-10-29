@@ -34,10 +34,10 @@ function registrarDBTransaccional() {
   datosAIntroducir.push(metodoCliente.getValue());
   datosAIntroducir.push(descuentosCliente.getValue() ? "Con Descuento" : "Sin descuento");
   datosAIntroducir.push(importeTotalCliente.getValue());
-  datosAIntroducir.push(extraCliente.getValue());
+  datosAIntroducir.push(extraCliente.getValue() != '' ? extraCliente.getValue() : '0');
   datosAIntroducir.push(comoNosConocisteCliente.getValue());
   datosAIntroducir.push(celdaPromocionesCliente != '' ? comprobanteCliente.getValue() :  "Sin Promociones");
-  datosAIntroducir.push(notasServicioCliente.getValue());
+  datosAIntroducir.push(notasServicioCliente.getValue() != '' ? notasServicioCliente.getValue() : "-");
   datosAIntroducir.push(comprobanteCliente.getValue() != '' ? comprobanteCliente.getValue() :  "Sin Comprobante");
   datosAIntroducir.push(atentidoPor.getValue())
 

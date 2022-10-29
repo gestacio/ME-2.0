@@ -1,6 +1,8 @@
 {
   "timeZone": "America/Montevideo",
-  "dependencies": {},
+  "dependencies": {
+    "enabledAdvancedServices": []
+  },
   "webapp": {
     "executeAs": "USER_DEPLOYING",
     "access": "ANYONE_ANONYMOUS"

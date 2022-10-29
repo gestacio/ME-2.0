@@ -10,4 +10,4 @@ function buscarCliente() {
   return busqueda;
 }
 
-console.log("cliente encontrado: " + buscarCliente());
+// console.log("cliente encontrado: " + buscarCliente());

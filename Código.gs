@@ -3,18 +3,24 @@ function doGet(e) {
 }
 
 function registroCliente() {
+  var estanLosDatosValidos = datosValidados()
+  // 0 = OK
+  // 1 = Datos de cliente incompletos
+  // 2 = Servicios o Cantidad vacío
+  // 3 = No hay misma cantidad de filas de Servicios y Cantidad
 
-  // UnProtectCells();
-  // setPermisos()
-  registrarCliente();
+  if (estanLosDatosValidos) {
 
-  // SpreadsheetApp.getUi().alert("Hola mundo");
-  registrarDBTransaccional();
-  registrarDBServices()
+    registrarCliente();
+    registrarDBTransaccional();
+    registrarDBServices()
 
-  clearRegistro();
-  actualizarIDCliente();
+    clearRegistro();
+    actualizarIDCliente();
 
+    SpreadsheetApp.getUi().alert("Cliente ingresado correctamente ✓");
+  } 
+  
   // removePermisos()
 
   // ProtectCells();
@@ -35,51 +41,9 @@ function abrirLink() {
 
 
 
-function setPermisos() {
-  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  var id = spreadsheet.getId();
-  DriveApp.getFileById(id).setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.OWNER);
-}
-
-function removePermisos() {
-  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  var id = spreadsheet.getId();
-  DriveApp.getFileById(id).setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
-}
 
 
 
-function UnProtectCells() {
-  var spreadsheet = SpreadsheetApp.getActive();
-  var proteccion = spreadsheet.getProtections(SpreadsheetApp.ProtectionType.SHEET)[0];
-
-  console.log(proteccion)
-
-  proteccion.remove()
-
-  // for (var i = 0; i < rangos_protegidos.length; i++) 
-  // {
-  //   var proteccion = rangos_protegidos[i];
-  //   if (proteccion.canEdit()) 
-  //   {
-  //      proteccion.remove();
-  //   } 
-  // }
-}
-
-function ProtectCells() {
-  // var rango_protegido = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getRange(1, 1, 2, 2).protect();
-  // var hojaProtegida = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('DB Transactional').protect()
-  var hojaProtegida = hojaDataBase.protect()
-  var mi_usuario = Session.getEffectiveUser();
-
-  hojaProtegida.addEditor(mi_usuario);
-  hojaProtegida.removeEditors(hojaProtegida.getEditors());
-
-  if (hojaProtegida.canDomainEdit()) {
-    rango_protegido.setDomainEdit(false);
-  }
-}
 
 
 
