@@ -4,6 +4,8 @@ function calcularIDCliente() {
   var mes = fecha.getMonth() + 1
   var year = fecha.getFullYear().toString()
   var year = year.slice(2)
+  dia = zfill(dia, 2);
+  mes = zfill(mes, 2);
   let fechaIDCliente = dia + "" + mes + "" + year
 
   var fechaActual = fechaIngresoCliente.getValue();
